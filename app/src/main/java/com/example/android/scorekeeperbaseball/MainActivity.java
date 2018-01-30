@@ -39,15 +39,22 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(score));
     }
 
+    public void displayInning(int inning) {
+        TextView scoreView = (TextView) findViewById(R.id.inning);
+        scoreView.setText(String.valueOf(inning));
+    }
+
     public void resetAll(View view) {
         outHome = 0;
         outVisitor = 0;
         runHome = 0;
         runVisitor = 0;
+        inning = 0;
         displayForHome(runHome);
         displayForVisitor(runVisitor);
         displayForHomeOuts(outHome);
         displayForVisitorOuts(outVisitor);
+        displayInning(inning);
     }
 
     public void runScoreHome(View view) {
@@ -69,8 +76,6 @@ public class MainActivity extends AppCompatActivity {
         outVisitor += 1;
         displayForVisitorOuts(outVisitor);
     }
-
-
 
 
 }
