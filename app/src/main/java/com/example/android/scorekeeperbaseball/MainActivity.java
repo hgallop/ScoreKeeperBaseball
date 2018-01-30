@@ -9,7 +9,7 @@ public class MainActivity extends AppCompatActivity {
 
     int runHome = 0;
     int runVisitor = 0;
-    int inning = 0;
+    int inning = 1;
     int outHome = 0;
     int outVisitor = 0;
 
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         outVisitor = 0;
         runHome = 0;
         runVisitor = 0;
-        inning = 0;
+        inning = 1;
         displayForHome(runHome);
         displayForVisitor(runVisitor);
         displayForHomeOuts(outHome);
@@ -67,15 +67,52 @@ public class MainActivity extends AppCompatActivity {
         displayForVisitor(runVisitor);
     }
 
+    /**
+     * initial state of game inning = 1
+     * first team gets three outs
+     * second team gets three outs
+     * inning increase by 1
+     * outs reset to 0
+     * display inning and outs for each team
+     * If inning is greater than 9
+     * display Extra innings
+     */
     public void outsHome(View view) {
-        outHome += 1;
-        displayForHomeOuts(outHome);
+        if (outHome == 3 && outVisitor == 3) {
+            if (inning < 9) {
+                inning += 1;
+                outHome = 0;
+                outVisitor = 0;
+                displayForHomeOuts(outHome);
+                displayForVisitorOuts(outVisitor);
+            } else {
+                displayInning(inning);
+            }
+            displayInning(inning);
+        } else {
+            outHome += 1;
+            displayForHomeOuts(outHome);
+        }
+
+
     }
 
     public void outsVisitor(View view) {
-        outVisitor += 1;
-        displayForVisitorOuts(outVisitor);
+        if (outHome == 3 && outVisitor == 3) {
+            if (inning < 9) {
+                inning += 1;
+                outHome = 0;
+                outVisitor = 0;
+                displayForHomeOuts(outHome);
+                displayForVisitorOuts(outVisitor);
+            } else {
+                displayInning(inning);
+            }
+            displayInning(inning);
+        } else {
+            outVisitor += 1;
+            displayForVisitorOuts(outVisitor);
+        }
     }
-
 
 }
