@@ -32,10 +32,16 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:id="@+id/runsHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/outsHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -69,10 +75,16 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:id="@+id/runsVisitor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/outsVisitor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -94,6 +106,12 @@
     </LinearLayout>
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/innings"/>
+
+    <TextView
+        android:id="@+id/innings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/reset"/>
