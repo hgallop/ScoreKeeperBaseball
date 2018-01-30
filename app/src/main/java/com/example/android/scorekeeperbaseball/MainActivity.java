@@ -76,32 +76,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * initial state of game inning = 1
-     * first team gets three outs
-     * second team gets three outs
-     * inning increase by 1
-     * outs reset to 0
-     * display inning and outs for each team
-     * If inning is greater than 9
-     * display Extra innings
+     * If inning is greater than 9 and if runs for both teams are equal
+     * display text Extra innings
+     * allow to track outs for each team
      */
+
     /** Calculates and displays home team outs. Control and display inning */
     public void outsHome(View view) {
         if (outHome < 3) {
             outHome += 1;
         }
         displayForHomeOuts(outHome);
-        if (outHome == 3 && outVisitor == 3) {
+        if (outHome == 3 && outVisitor == 3 && inning < 9) {
             outHome = 0;
             outVisitor = 0;
+            inning += 1;
             displayForHomeOuts(outHome);
             displayForVisitorOuts(outVisitor);
-            if (inning < 9) {
-                inning += 1;
-            }
             displayInning(inning);
         }
-
 
     }
 
@@ -111,14 +104,12 @@ public class MainActivity extends AppCompatActivity {
             outVisitor += 1;
         }
         displayForVisitorOuts(outVisitor);
-        if (outHome == 3 && outVisitor == 3) {
+        if (outHome == 3 && outVisitor == 3 && inning < 9) {
             outHome = 0;
             outVisitor = 0;
+            inning += 1;
             displayForHomeOuts(outHome);
             displayForVisitorOuts(outVisitor);
-            if (inning < 9) {
-                inning += 1;
-            }
             displayInning(inning);
         }
     }
