@@ -29,11 +29,25 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(score));
     }
 
+    public void displayForHomeOuts(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.outsHome);
+        scoreView.setText(String.valueOf(score));
+    }
+
+    public void displayForVisitorOuts(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.outsVisitor);
+        scoreView.setText(String.valueOf(score));
+    }
+
     public void resetAll(View view) {
+        outHome = 0;
+        outVisitor = 0;
         runHome = 0;
         runVisitor = 0;
         displayForHome(runHome);
         displayForVisitor(runVisitor);
+        displayForHomeOuts(outHome);
+        displayForVisitorOuts(outVisitor);
     }
 
     public void runScoreHome(View view) {
@@ -45,6 +59,18 @@ public class MainActivity extends AppCompatActivity {
         runVisitor += 1;
         displayForVisitor(runVisitor);
     }
+
+    public void outsHome(View view) {
+        outHome += 1;
+        displayForHomeOuts(outHome);
+    }
+
+    public void outsVisitor(View view) {
+        outVisitor += 1;
+        displayForVisitorOuts(outVisitor);
+    }
+
+
 
 
 }
