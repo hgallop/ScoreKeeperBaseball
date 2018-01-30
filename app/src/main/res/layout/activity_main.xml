@@ -54,7 +54,8 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/run"/>
+                android:text="@string/run"
+                android:onClick="runScoreHome"/>
 
 
             <Button
@@ -105,7 +106,8 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/run"/>
+                android:text="@string/run"
+                android:onClick="runScoreVisitor"/>
 
 
             <Button
@@ -139,6 +141,8 @@
         android:id="@+id/reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:text="@string/reset"
+        android:onClick="resetAll"/>
 
 </RelativeLayout>
