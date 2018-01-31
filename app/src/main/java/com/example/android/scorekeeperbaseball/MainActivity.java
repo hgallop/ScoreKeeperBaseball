@@ -127,6 +127,9 @@ public class MainActivity extends AppCompatActivity {
             outHome = 0;
             outVisitor = 0;
             inning += 1;
+            if (inning >= 10) {
+                inning = 10;
+            }
             displayForHomeOuts(outHome);
             displayForVisitorOuts(outVisitor);
             displayInning(inning);
@@ -150,10 +153,13 @@ public class MainActivity extends AppCompatActivity {
             displayForVisitorOuts(outVisitor);
             displayInning(inning);
         }
-        if (inning >= 9 && runHome == runVisitor) {
+        if (inning == 9 && runHome == runVisitor) {
             outHome = 0;
             outVisitor = 0;
             inning += 1;
+            if (inning >= 10) {
+                inning = 10;
+            }
             displayForHomeOuts(outHome);
             displayForVisitorOuts(outVisitor);
             displayInning(inning);
