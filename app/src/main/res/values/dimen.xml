@@ -7,7 +7,7 @@
     <dimen name="none">0dp</dimen>
     <dimen name="bar">1dp</dimen>
     <dimen name="team">32sp</dimen>
-    <dimen name="run_out">22dp</dimen>
+    <dimen name="run_out">22sp</dimen>
     <dimen name="nums">46sp</dimen>
-    <dimen name="nums2">32dp</dimen>
+    <dimen name="nums2">32sp</dimen>
 </resources>
