@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_margin">8dp</dimen>
+    <dimen name="button_sides">24dp</dimen>
+    <dimen name="margin">16dp</dimen>
+    <dimen name="margin_bottom">24dp</dimen>
+    <dimen name="none">0dp</dimen>
+    <dimen name="bar">1dp</dimen>
+    <dimen name="team">27sp</dimen>
+    <dimen name="nums">56sp</dimen>
+    <dimen name="reset">32dp</dimen>
+</resources>
