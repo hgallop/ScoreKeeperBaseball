@@ -75,11 +75,17 @@ public class MainActivity extends AppCompatActivity {
         displayForVisitor(runVisitor);
     }
 
-    /**
-     * If inning is greater than 9 and if runs for both teams are equal
-     * display text Extra innings
-     * allow to track outs for each team
-     */
+    /** Calculates and displays visiting team run on button click */
+    public void grandSlamHome(View view) {
+        runHome += 4;
+        displayForHome(runHome);
+    }
+
+    /** Calculates and displays visiting team run on button click */
+    public void  grandSlamVisitor(View view) {
+        runVisitor += 4;
+        displayForVisitor(runVisitor);
+    }
 
     /** Calculates and displays home team outs. Control and display inning */
     public void outsHome(View view) {
@@ -88,6 +94,14 @@ public class MainActivity extends AppCompatActivity {
         }
         displayForHomeOuts(outHome);
         if (outHome == 3 && outVisitor == 3 && inning < 9) {
+            outHome = 0;
+            outVisitor = 0;
+            inning += 1;
+            displayForHomeOuts(outHome);
+            displayForVisitorOuts(outVisitor);
+            displayInning(inning);
+        }
+        if (inning == 9 && runHome == runVisitor) {
             outHome = 0;
             outVisitor = 0;
             inning += 1;
@@ -112,6 +126,15 @@ public class MainActivity extends AppCompatActivity {
             displayForVisitorOuts(outVisitor);
             displayInning(inning);
         }
+        if (inning >= 9 && runHome == runVisitor) {
+            outHome = 0;
+            outVisitor = 0;
+            inning += 1;
+            displayForHomeOuts(outHome);
+            displayForVisitorOuts(outVisitor);
+            displayInning(inning);
+        }
+
     }
 
 }

@@ -67,7 +67,8 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/slam"/>
+                android:text="@string/slam"
+                android:onClick="grandSlamHome"/>
 
         </LinearLayout>
 
@@ -121,6 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/slam"
+                android:onClick="grandSlamVisitor"
                 />
 
         </LinearLayout>
