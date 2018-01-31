@@ -3,19 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+    android:background="@drawable/baseball_4"
     tools:context="com.example.android.scorekeeperbaseball.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/image"
-            android:fillViewport="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/baseball_4" />
 
         <LinearLayout
             android:id="@+id/layout"
