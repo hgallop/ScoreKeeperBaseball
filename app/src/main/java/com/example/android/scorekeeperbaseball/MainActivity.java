@@ -13,17 +13,28 @@ public class MainActivity extends AppCompatActivity {
     int outHome = 0;
     int outVisitor = 0;
 
+    private TextView runsForHome;
+    private TextView runsForVisitor;
+    private TextView outsForHome;
+    private TextView outsForVisitor;
+    private TextView inningDisplay;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        runsForHome = (TextView) findViewById(R.id.runsHome);
+        runsForVisitor = (TextView) findViewById(R.id.runsVisitor);
+        outsForHome = (TextView) findViewById(R.id.outsHome);
+        outsForVisitor = (TextView) findViewById(R.id.outsVisitor);
+        inningDisplay = (TextView) findViewById(R.id.inning);
     }
 
     /**
      * Displays home team score
      */
     public void displayForHome(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.runsHome);
+        TextView scoreView = runsForHome;
         scoreView.setText(String.valueOf(score));
     }
 
@@ -31,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
      * Displays visiting team scoew
      */
     public void displayForVisitor(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.runsVisitor);
+        TextView scoreView = runsForVisitor;
         scoreView.setText(String.valueOf(score));
     }
 
@@ -39,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
      * Displays home team outs
      */
     public void displayForHomeOuts(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.outsHome);
+        TextView scoreView = outsForHome;
         scoreView.setText(String.valueOf(score));
     }
 
@@ -47,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
      * Displays visiting team outs
      */
     public void displayForVisitorOuts(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.outsVisitor);
+        TextView scoreView = outsForVisitor;
         scoreView.setText(String.valueOf(score));
     }
 
@@ -55,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
      * Displays inning
      */
     public void displayInning(int inning) {
-        TextView scoreView = (TextView) findViewById(R.id.inning);
+        TextView scoreView = inningDisplay;
         scoreView.setText(String.valueOf(inning));
     }
 

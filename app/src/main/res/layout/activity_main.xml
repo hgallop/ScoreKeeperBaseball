@@ -210,7 +210,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/initial"
+                android:text="@string/initial_inning"
                 android:textColor="@color/score"
                 android:textSize="@dimen/nums2" />
 
