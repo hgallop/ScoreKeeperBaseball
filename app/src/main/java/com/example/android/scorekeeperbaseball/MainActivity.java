@@ -23,11 +23,34 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Initializes all text views in one call
         runsForHome = (TextView) findViewById(R.id.runsHome);
         runsForVisitor = (TextView) findViewById(R.id.runsVisitor);
         outsForHome = (TextView) findViewById(R.id.outsHome);
         outsForVisitor = (TextView) findViewById(R.id.outsVisitor);
         inningDisplay = (TextView) findViewById(R.id.inning);
+    }
+
+    /** Saves app data between states */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("runHome", runHome);
+        outState.putInt("runVisitor", runVisitor);
+        outState.putInt("outHome", outHome);
+        outState.putInt("outVisitor", outVisitor);
+        outState.putInt("inning", inning);
+    }
+
+    /** Restores app data on new state */
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        runHome = savedInstanceState.getInt("runHome");
+        runVisitor = savedInstanceState.getInt("runVisitor");
+        outHome = savedInstanceState.getInt("outHome");
+        outVisitor = savedInstanceState.getInt("outVisitor");
+        inning = savedInstanceState.getInt("inning");
     }
 
     /**

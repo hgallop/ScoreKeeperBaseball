@@ -50,6 +50,7 @@
 
                 <TextView
                     android:id="@+id/runsHome"
+                    android:freezesText="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -67,6 +68,7 @@
 
                 <TextView
                     android:id="@+id/outsHome"
+                    android:freezesText="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -133,6 +135,7 @@
 
                 <TextView
                     android:id="@+id/runsVisitor"
+                    android:freezesText="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -150,6 +153,7 @@
 
                 <TextView
                     android:id="@+id/outsVisitor"
+                    android:freezesText="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -207,6 +211,7 @@
 
             <TextView
                 android:id="@+id/inning"
+                android:freezesText="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
