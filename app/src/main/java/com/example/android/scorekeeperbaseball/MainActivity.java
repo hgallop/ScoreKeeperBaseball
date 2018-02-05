@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Initializes all text views in one call
-        runsForHome = (TextView) findViewById(R.id.runsHome);
-        runsForVisitor = (TextView) findViewById(R.id.runsVisitor);
-        outsForHome = (TextView) findViewById(R.id.outsHome);
-        outsForVisitor = (TextView) findViewById(R.id.outsVisitor);
-        inningDisplay = (TextView) findViewById(R.id.inning);
+        runsForHome = findViewById(R.id.runsHome);
+        runsForVisitor = findViewById(R.id.runsVisitor);
+        outsForHome = findViewById(R.id.outsHome);
+        outsForVisitor = findViewById(R.id.outsVisitor);
+        inningDisplay = findViewById(R.id.inning);
     }
 
     /** Saves app data between states */
