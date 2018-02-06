@@ -12,4 +12,6 @@
     <string name="outs">les Retraits</string>
     <string name="in">la Manche</string>
     <string name="reset">Réinitialiser</string>
+    <string name="toasthome">L\'équipe à Domicile Gagne!</string>
+    <string name="toastvisitor">L\'équipe Visiteuse Gagne!</string>
 </resources>

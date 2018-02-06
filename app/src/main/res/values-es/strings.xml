@@ -12,4 +12,6 @@
     <string name="slam">Grand Slam</string>
     <string name="image">Béisbol</string>
     <string name="reset">Reiniciar</string>
+    <string name="toasthome">¡El Equipo Local Gana!</string>
+    <string name="toastvisitor">¡El Equipo Visitante Gana!</string>
 </resources>
