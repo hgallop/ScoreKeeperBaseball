@@ -50,10 +50,10 @@
 
                 <TextView
                     android:id="@+id/runsHome"
-                    android:freezesText="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:freezesText="true"
                     android:text="@string/initial"
                     android:textColor="@color/score"
                     android:textSize="@dimen/nums" />
@@ -68,64 +68,61 @@
 
                 <TextView
                     android:id="@+id/outsHome"
-                    android:freezesText="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:freezesText="true"
                     android:text="@string/initial"
                     android:textColor="@color/team"
                     android:textSize="@dimen/nums2" />
 
                 <Button
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/button_sides"
                     android:layout_marginRight="@dimen/button_sides"
                     android:layout_marginTop="@dimen/margin"
+                    android:background="@drawable/buttton_shape"
                     android:onClick="runScoreHome"
+                    android:shadowColor="@color/team"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
                     android:text="@string/run"
-                    android:background="@drawable/buttton_shape"
-                    android:shadowColor="@color/team"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
-                    />
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp" />
 
                 <Button
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/button_sides"
                     android:layout_marginRight="@dimen/button_sides"
                     android:layout_marginTop="@dimen/margin"
+                    android:background="@drawable/buttton_shape"
                     android:onClick="outsHome"
-                    android:text="@string/out"
-                    android:background="@drawable/buttton_shape"
                     android:shadowColor="@color/team"
                     android:shadowDx="0"
                     android:shadowDy="0"
                     android:shadowRadius="5"
-                    />
+                    android:text="@string/out"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp" />
 
                 <Button
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/button_sides"
                     android:layout_marginRight="@dimen/button_sides"
                     android:layout_marginTop="@dimen/margin"
-                    android:onClick="grandSlamHome"
-                    android:text="@string/slam"
                     android:background="@drawable/buttton_shape"
+                    android:onClick="grandSlamHome"
                     android:shadowColor="@color/team"
                     android:shadowDx="0"
                     android:shadowDy="0"
                     android:shadowRadius="5"
-                    />
+                    android:text="@string/slam"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -158,10 +155,10 @@
 
                 <TextView
                     android:id="@+id/runsVisitor"
-                    android:freezesText="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:freezesText="true"
                     android:text="@string/initial"
                     android:textColor="@color/score"
                     android:textSize="@dimen/nums" />
@@ -176,64 +173,61 @@
 
                 <TextView
                     android:id="@+id/outsVisitor"
-                    android:freezesText="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:freezesText="true"
                     android:text="@string/initial"
                     android:textColor="@color/team"
                     android:textSize="@dimen/nums2" />
 
                 <Button
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/button_sides"
                     android:layout_marginRight="@dimen/button_sides"
                     android:layout_marginTop="@dimen/margin"
+                    android:background="@drawable/buttton_shape"
                     android:onClick="runScoreVisitor"
+                    android:shadowColor="@color/team"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
                     android:text="@string/run"
-                    android:background="@drawable/buttton_shape"
-                    android:shadowColor="@color/team"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
-                    />
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp" />
 
                 <Button
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/button_sides"
                     android:layout_marginRight="@dimen/button_sides"
                     android:layout_marginTop="@dimen/margin"
+                    android:background="@drawable/buttton_shape"
                     android:onClick="outsVisitor"
-                    android:text="@string/out"
-                    android:background="@drawable/buttton_shape"
                     android:shadowColor="@color/team"
                     android:shadowDx="0"
                     android:shadowDy="0"
                     android:shadowRadius="5"
-                    />
+                    android:text="@string/out"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp" />
 
                 <Button
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/button_sides"
                     android:layout_marginRight="@dimen/button_sides"
                     android:layout_marginTop="@dimen/margin"
-                    android:onClick="grandSlamVisitor"
-                    android:text="@string/slam"
                     android:background="@drawable/buttton_shape"
+                    android:onClick="grandSlamVisitor"
                     android:shadowColor="@color/team"
                     android:shadowDx="0"
                     android:shadowDy="0"
                     android:shadowRadius="5"
-                    />
+                    android:text="@string/slam"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -257,29 +251,28 @@
 
             <TextView
                 android:id="@+id/inning"
-                android:freezesText="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:freezesText="true"
                 android:text="@string/initial_inning"
                 android:textColor="@color/score"
                 android:textSize="@dimen/nums2" />
 
             <Button
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="16sp"
                 android:id="@+id/reset"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/tiny_margin"
-                android:onClick="resetAll"
-                android:text="@string/reset"
                 android:background="@drawable/buttton_shape"
+                android:onClick="resetAll"
                 android:shadowColor="@color/team"
                 android:shadowDx="0"
                 android:shadowDy="0"
                 android:shadowRadius="5"
-                />
+                android:text="@string/reset"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp" />
 
         </LinearLayout>
     </RelativeLayout>

@@ -32,7 +32,9 @@ public class MainActivity extends AppCompatActivity {
         inningDisplay = findViewById(R.id.inning);
     }
 
-    /** Saves app data between states */
+    /**
+     * Saves app data between states
+     */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -43,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt("inning", inning);
     }
 
-    /** Restores app data on new state */
+    /**
+     * Restores app data on new state
+     */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
@@ -169,9 +173,9 @@ public class MainActivity extends AppCompatActivity {
             displayForVisitorOuts(outVisitor);
             displayInning(inning);
         }
-        if (inning >= 9 && runHome > runVisitor && outHome  == 3 && outVisitor == 3) {
+        if (inning >= 9 && runHome > runVisitor && outHome == 3 && outVisitor == 3) {
             Toast.makeText(this, this.getString(R.string.toasthome), Toast.LENGTH_SHORT).show();
-        } else if (inning >= 9 && runHome < runVisitor && outHome  == 3 && outVisitor == 3) {
+        } else if (inning >= 9 && runHome < runVisitor && outHome == 3 && outVisitor == 3) {
             Toast.makeText(this, this.getString(R.string.toastvisitor), Toast.LENGTH_SHORT).show();
         }
         displayForHomeOuts(outHome);
@@ -207,9 +211,9 @@ public class MainActivity extends AppCompatActivity {
             displayForVisitorOuts(outVisitor);
             displayInning(inning);
         }
-        if (inning >= 9 && runHome > runVisitor && outHome  == 3 && outVisitor == 3) {
+        if (inning >= 9 && runHome > runVisitor && outHome == 3 && outVisitor == 3) {
             Toast.makeText(this, this.getString(R.string.toasthome), Toast.LENGTH_SHORT).show();
-        } else if (inning >= 9 && runHome < runVisitor && outHome  == 3 && outVisitor == 3) {
+        } else if (inning >= 9 && runHome < runVisitor && outHome == 3 && outVisitor == 3) {
             Toast.makeText(this, this.getString(R.string.toastvisitor), Toast.LENGTH_SHORT).show();
         }
         displayForHomeOuts(outHome);
