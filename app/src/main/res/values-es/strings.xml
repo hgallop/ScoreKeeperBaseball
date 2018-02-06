@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Spanish translations from: http://mlb.mlb.com/mlb/features/mexican_baseball/glossary.jsp -->
+<resources>
+    <string name="app_name">" el Encargado del Marcador"</string>
+    <string name="visit">Visitante</string>
+    <string name="home">Local</string>
+    <string name="outs">" Fuera"</string>
+    <string name="runs">los Carreras</string>
+    <string name="in">Episodio</string>
+    <string name="run">una Carrera</string>
+    <string name="out">los Fueras</string>
+    <string name="slam">Grand Slam</string>
+    <string name="image">Béisbol</string>
+    <string name="reset">Reiniciar</string>
+</resources>
