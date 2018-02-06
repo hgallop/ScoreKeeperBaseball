@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -168,6 +169,14 @@ public class MainActivity extends AppCompatActivity {
             displayForVisitorOuts(outVisitor);
             displayInning(inning);
         }
+        if (inning >= 9 && runHome > runVisitor && outHome  == 3 && outVisitor == 3) {
+            Toast.makeText(this, "Home Team Wins!", Toast.LENGTH_SHORT).show();
+        } else if (inning >= 9 && runHome < runVisitor) {
+            Toast.makeText(this, "Visiting Team Wins!", Toast.LENGTH_SHORT).show();
+        }
+        displayForHomeOuts(outHome);
+        displayForVisitorOuts(outVisitor);
+        displayInning(inning);
 
     }
 
@@ -198,6 +207,14 @@ public class MainActivity extends AppCompatActivity {
             displayForVisitorOuts(outVisitor);
             displayInning(inning);
         }
+        if (inning >= 9 && runHome > runVisitor && outHome  == 3 && outVisitor == 3) {
+            Toast.makeText(this, "Home Team Wins!", Toast.LENGTH_SHORT).show();
+        } else if (inning >= 9 && runHome < runVisitor) {
+            Toast.makeText(this, "Visiting Team Wins!", Toast.LENGTH_SHORT).show();
+        }
+        displayForHomeOuts(outHome);
+        displayForVisitorOuts(outVisitor);
+        displayInning(inning);
 
     }
 
