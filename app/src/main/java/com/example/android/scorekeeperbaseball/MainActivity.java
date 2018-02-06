@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (inning >= 9 && runHome > runVisitor && outHome  == 3 && outVisitor == 3) {
             Toast.makeText(this, this.getString(R.string.toasthome), Toast.LENGTH_SHORT).show();
-        } else if (inning >= 9 && runHome < runVisitor) {
+        } else if (inning >= 9 && runHome < runVisitor && outHome  == 3 && outVisitor == 3) {
             Toast.makeText(this, this.getString(R.string.toastvisitor), Toast.LENGTH_SHORT).show();
         }
         displayForHomeOuts(outHome);
@@ -208,14 +208,13 @@ public class MainActivity extends AppCompatActivity {
             displayInning(inning);
         }
         if (inning >= 9 && runHome > runVisitor && outHome  == 3 && outVisitor == 3) {
-            Toast.makeText(this, "Home Team Wins!", Toast.LENGTH_SHORT).show();
-        } else if (inning >= 9 && runHome < runVisitor) {
-            Toast.makeText(this, "Visiting Team Wins!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, this.getString(R.string.toasthome), Toast.LENGTH_SHORT).show();
+        } else if (inning >= 9 && runHome < runVisitor && outHome  == 3 && outVisitor == 3) {
+            Toast.makeText(this, this.getString(R.string.toastvisitor), Toast.LENGTH_SHORT).show();
         }
         displayForHomeOuts(outHome);
         displayForVisitorOuts(outVisitor);
         displayInning(inning);
-
     }
 
 }
