@@ -70,32 +70,52 @@
                     android:textSize="@dimen/nums2" />
 
                 <Button
-                    android:layout_width="match_parent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/button_sides"
-                    android:layout_marginRight="@dimen/button_sides"
                     android:layout_marginTop="@dimen/margin"
                     android:onClick="runScoreHome"
-                    android:text="@string/run" />
-
+                    android:text="@string/run"
+                    android:background="@drawable/buttton_shape"
+                    android:shadowColor="@color/team"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    />
 
                 <Button
-                    android:layout_width="match_parent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/button_sides"
-                    android:layout_marginRight="@dimen/button_sides"
+                    android:layout_gravity="center"
                     android:layout_marginTop="@dimen/margin"
                     android:onClick="outsHome"
-                    android:text="@string/out" />
+                    android:text="@string/out"
+                    android:background="@drawable/buttton_shape"
+                    android:shadowColor="@color/team"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    />
 
                 <Button
-                    android:layout_width="match_parent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/button_sides"
-                    android:layout_marginRight="@dimen/button_sides"
+                    android:layout_gravity="center"
                     android:layout_marginTop="@dimen/margin"
                     android:onClick="grandSlamHome"
-                    android:text="@string/slam" />
+                    android:text="@string/slam"
+                    android:background="@drawable/buttton_shape"
+                    android:shadowColor="@color/team"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    />
 
             </LinearLayout>
 
@@ -155,32 +175,52 @@
                     android:textSize="@dimen/nums2" />
 
                 <Button
-                    android:layout_width="match_parent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/button_sides"
-                    android:layout_marginRight="@dimen/button_sides"
+                    android:layout_gravity="center"
                     android:layout_marginTop="@dimen/margin"
                     android:onClick="runScoreVisitor"
-                    android:text="@string/run" />
-
+                    android:text="@string/run"
+                    android:background="@drawable/buttton_shape"
+                    android:shadowColor="@color/team"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    />
 
                 <Button
-                    android:layout_width="match_parent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/button_sides"
-                    android:layout_marginRight="@dimen/button_sides"
+                    android:layout_gravity="center"
                     android:layout_marginTop="@dimen/margin"
                     android:onClick="outsVisitor"
-                    android:text="@string/out" />
+                    android:text="@string/out"
+                    android:background="@drawable/buttton_shape"
+                    android:shadowColor="@color/team"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    />
 
                 <Button
-                    android:layout_width="match_parent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/button_sides"
-                    android:layout_marginRight="@dimen/button_sides"
+                    android:layout_gravity="center"
                     android:layout_marginTop="@dimen/margin"
                     android:onClick="grandSlamVisitor"
-                    android:text="@string/slam" />
+                    android:text="@string/slam"
+                    android:background="@drawable/buttton_shape"
+                    android:shadowColor="@color/team"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    />
 
             </LinearLayout>
 
@@ -213,12 +253,20 @@
                 android:textSize="@dimen/nums2" />
 
             <Button
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
                 android:id="@+id/reset"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/tiny_margin"
                 android:onClick="resetAll"
-                android:text="@string/reset" />
+                android:text="@string/reset"
+                android:background="@drawable/buttton_shape"
+                android:shadowColor="@color/team"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                />
         </LinearLayout>
     </RelativeLayout>
 
