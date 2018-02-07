@@ -10,4 +10,5 @@
     <dimen name="run_out">22sp</dimen>
     <dimen name="nums">46sp</dimen>
     <dimen name="nums2">32sp</dimen>
+    <dimen name="button_text">16sp</dimen>
 </resources>

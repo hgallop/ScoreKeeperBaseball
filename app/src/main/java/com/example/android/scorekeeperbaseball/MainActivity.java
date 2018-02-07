@@ -8,6 +8,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    static final String RUN_HOME = "runHome";
+    static final String RUN_VISITOR = "runVisitor";
+    static final String OUT_HOME = "outHome";
+    static final String OUT_VISITOR = "outVisitor";
+    static final String INNING = "inning";
+
     int runHome = 0;
     int runVisitor = 0;
     int inning = 1;
@@ -38,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("runHome", runHome);
-        outState.putInt("runVisitor", runVisitor);
-        outState.putInt("outHome", outHome);
-        outState.putInt("outVisitor", outVisitor);
-        outState.putInt("inning", inning);
+        outState.putInt(RUN_HOME, runHome);
+        outState.putInt(RUN_VISITOR, runVisitor);
+        outState.putInt(OUT_HOME, outHome);
+        outState.putInt(OUT_VISITOR, outVisitor);
+        outState.putInt(INNING, inning);
     }
 
     /**
@@ -51,51 +57,46 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        runHome = savedInstanceState.getInt("runHome");
-        runVisitor = savedInstanceState.getInt("runVisitor");
-        outHome = savedInstanceState.getInt("outHome");
-        outVisitor = savedInstanceState.getInt("outVisitor");
-        inning = savedInstanceState.getInt("inning");
+        runHome = savedInstanceState.getInt(RUN_HOME);
+        runVisitor = savedInstanceState.getInt(RUN_VISITOR);
+        outHome = savedInstanceState.getInt(OUT_HOME);
+        outVisitor = savedInstanceState.getInt(OUT_VISITOR);
+        inning = savedInstanceState.getInt(INNING);
     }
 
     /**
      * Displays home team score
      */
     public void displayForHome(int score) {
-        TextView scoreView = runsForHome;
-        scoreView.setText(String.valueOf(score));
+        runsForHome.setText(String.valueOf(score));
     }
 
     /**
      * Displays visiting team scoew
      */
     public void displayForVisitor(int score) {
-        TextView scoreView = runsForVisitor;
-        scoreView.setText(String.valueOf(score));
+        runsForVisitor.setText(String.valueOf(score));
     }
 
     /**
      * Displays home team outs
      */
     public void displayForHomeOuts(int score) {
-        TextView scoreView = outsForHome;
-        scoreView.setText(String.valueOf(score));
+        outsForHome.setText(String.valueOf(score));
     }
 
     /**
      * Displays visiting team outs
      */
     public void displayForVisitorOuts(int score) {
-        TextView scoreView = outsForVisitor;
-        scoreView.setText(String.valueOf(score));
+        outsForVisitor.setText(String.valueOf(score));
     }
 
     /**
      * Displays inning
      */
     public void displayInning(int inning) {
-        TextView scoreView = inningDisplay;
-        scoreView.setText(String.valueOf(inning));
+        inningDisplay.setText(String.valueOf(inning));
     }
 
     /**
