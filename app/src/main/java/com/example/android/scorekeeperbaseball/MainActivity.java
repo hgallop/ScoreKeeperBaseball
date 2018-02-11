@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    //creates keys for save and restore instance state.
     static final String RUN_HOME = "runHome";
     static final String RUN_VISITOR = "runVisitor";
     static final String OUT_HOME = "outHome";
@@ -16,14 +17,17 @@ public class MainActivity extends AppCompatActivity {
     static final String HOME_NAME = "homeName";
     static final String VISITOR_NAME = "visitorName";
 
+    //creates variables for outs and innings comparisons.
     final int MAX_OUTS = 3;
     final int REG_INNINGS = 9;
     final int RESTART = 0;
 
+    //creates variables for inning, homeTeam name and wisitorTeam name.
     int inning = 1;
     String home;
     String visitor;
 
+    //creates variables for all views that are changed by the object and methods.
     private TextView runsForHome;
     private TextView runsForVisitor;
     private TextView outsForHome;
@@ -32,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView homeName;
     private TextView visitorName;
 
+    //creates variables for Team objects.
     Team homeTeam;
     Team visitorTeam;
 
@@ -39,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         // Initializes all text views in one call
         runsForHome = findViewById(R.id.runsHome);
         runsForVisitor = findViewById(R.id.runsVisitor);
@@ -48,12 +54,15 @@ public class MainActivity extends AppCompatActivity {
         homeName = findViewById(R.id.home_team);
         visitorName = findViewById(R.id.visitor_team);
 
+        //initializes names for Team objects
         home = getResources().getString(R.string.home);
         visitor = getResources().getString(R.string.visit);
 
+        //creates a Team objects.
         homeTeam = new Team(0,0, home);
         visitorTeam = new Team(0,0, visitor);
 
+        //displays initial values to views
         displayScoreHome(homeTeam.getRuns());
         displayNameHome(homeTeam.getName());
         displayOutsHome(homeTeam.getOuts());
@@ -64,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Saves app data between states
+     * saves state of app variables for screen rotation.
      */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -79,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Restores app data on new state
+     * restores state of app variables for screen rotation.
      */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
@@ -178,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Calculates and displays home team outs. Control and display inning
+     * Calculates and displays home team outs.
      */
     public void outsHome(View view) {
         homeTeam.teamOut();
@@ -186,13 +195,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Calculates and displays visiting team outs. Control and display inning
+     * Calculates and displays visiting team outs.
      */
     public void outsVisitor(View view) {
         visitorTeam.teamOut();
         inningsHelper();
     }
 
+
+    //handles logic for innings and win state.
     private void inningsHelper(){
         if (homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS && inning < REG_INNINGS) {
             homeTeam.setOuts(RESTART);
