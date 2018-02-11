@@ -56,30 +56,6 @@ public class Team {
         return outs;
     }
 
-    public void setNameView(TextView view){
-        nameView = view;
-    }
-
-    public TextView getNameView(){
-        return nameView;
-    }
-
-    public void setScoreView(TextView view){
-        scoreView = view;
-    }
-
-    public TextView getScoreView(){
-        return scoreView;
-    }
-
-    public void setOutsView(TextView view){
-        outsView = view;
-    }
-
-    public TextView getOutsView(){
-        return outsView;
-    }
-
     public void displayScore(int score) {
         scoreView.setText(String.valueOf(score));
     }
