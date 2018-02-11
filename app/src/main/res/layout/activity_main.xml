@@ -33,6 +33,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/home_team"
                     style="@style/TextStyle.ColorStyle"
                     android:text="@string/home"
                     android:textSize="@dimen/team" />
@@ -90,6 +91,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/visitor_team"
                     style="@style/TextStyle.ColorStyle"
                     android:text="@string/visit"
                     android:textSize="@dimen/team" />
