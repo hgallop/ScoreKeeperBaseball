@@ -1,9 +1,5 @@
 package com.example.android.scorekeeperbaseball;
 
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
-
 /**
  * Created by doyou on 2/10/2018.
  */
@@ -21,19 +17,11 @@ public class Team {
     private int outs;
     private String name;
 
-    //creates variables for object's views
-    private TextView nameView;
-    private TextView scoreView;
-    private TextView outsView;
-
     //object constructor. Used in MainActivity.java to create Team objects
-    public Team(int runs, int outs, String name, TextView nameView, TextView scoreView, TextView outsView){
+    public Team(int runs, int outs, String name) {
         this.runs = runs;
         this.outs = outs;
         this.name = name;
-        this.nameView = nameView;
-        this.scoreView = scoreView;
-        this.outsView =outsView;
     }
 
     //mustator. allows name value to be set.
@@ -66,38 +54,20 @@ public class Team {
         return outs;
     }
 
-    //method to display Team score.
-    public void displayScore(int score) {
-        scoreView.setText(String.valueOf(score));
-    }
-
-    //method to display Team name.
-    public void displayName(String name){
-        nameView.setText(name);
-    }
-
-    // method to display Team outs
-    public void displayOuts(int score){
-        outsView.setText((String.valueOf(score)));
-    }
-
     //method to score a run for Team
-    public void runScore(View view) {
+    public void runScore() {
         runs += RUN;
-        displayScore(runs);
     }
 
     //method to score a grandslam for Team
-    public void grandSlam(View view){
+    public void grandSlam(){
         runs += GRAND_SLAM;
-        displayScore(runs);
     }
 
     //method to add an out for Team
-    public void teamOut(View view) {
+    public void teamOut() {
         if (outs < MAX_OUTS) {
             outs += OUT;
         }
-        displayOuts(outs);
     }
 }

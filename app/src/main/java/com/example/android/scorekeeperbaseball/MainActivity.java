@@ -51,16 +51,16 @@ public class MainActivity extends AppCompatActivity {
         home = getResources().getString(R.string.home);
         visitor = getResources().getString(R.string.visit);
 
-        homeTeam = new Team(0,0, home, homeName, runsForHome, outsForHome);
-        visitorTeam = new Team(0,0, visitor, visitorName,runsForVisitor, outsForVisitor);
+        homeTeam = new Team(0,0, home);
+        visitorTeam = new Team(0,0, visitor);
 
-        homeTeam.displayScore(homeTeam.getRuns());
-        homeTeam.displayName(homeTeam.getName());
-        homeTeam.displayOuts(homeTeam.getOuts());
+        displayScoreHome(homeTeam.getRuns());
+        displayNameHome(homeTeam.getName());
+        displayOutsHome(homeTeam.getOuts());
 
-        visitorTeam.displayScore(visitorTeam.getRuns());
-        visitorTeam.displayName(visitorTeam.getName());
-        visitorTeam.displayOuts(visitorTeam.getOuts());
+        displayScoreVisitor(visitorTeam.getRuns());
+        displayNameVisitor(visitorTeam.getName());
+        displayOutsVisitor(visitorTeam.getOuts());
     }
 
     /**
@@ -93,6 +93,35 @@ public class MainActivity extends AppCompatActivity {
         inning = savedInstanceState.getInt(INNING);
     }
 
+    //method to display homeTeam score.
+    public void displayScoreHome(int score) {
+        runsForHome.setText(String.valueOf(score));
+    }
+
+    //method to display visitorTeam score.
+    public void displayScoreVisitor(int score) {
+        runsForVisitor.setText(String.valueOf(score));
+    }
+
+    //method to display homeTeam name.
+    public void displayNameHome(String name){
+        homeName.setText(name);
+    }
+
+    //method to display visitorTeam name.
+    public void displayNameVisitor(String name){
+        visitorName.setText(name);
+    }
+
+    // method to display homeTeam outs
+    public void displayOutsHome(int score){
+        outsForHome.setText((String.valueOf(score)));
+    }
+
+    // method to display visitorTeam outs
+    public void displayOutsVisitor(int score){
+        outsForVisitor.setText((String.valueOf(score)));
+    }
     /**
      * Displays inning
      */
@@ -109,10 +138,10 @@ public class MainActivity extends AppCompatActivity {
         homeTeam.setRuns(RESTART);
         visitorTeam.setRuns(RESTART);
         inning = 1;
-        homeTeam.displayScore(homeTeam.getRuns());
-        visitorTeam.displayScore(visitorTeam.getRuns());
-        homeTeam.displayOuts(homeTeam.getOuts());
-        visitorTeam.displayOuts(visitorTeam.getOuts());
+        displayScoreHome(homeTeam.getRuns());
+        displayScoreVisitor(visitorTeam.getRuns());
+        displayOutsHome(homeTeam.getOuts());
+        displayOutsVisitor(visitorTeam.getOuts());
         displayInning(inning);
     }
 
@@ -120,35 +149,39 @@ public class MainActivity extends AppCompatActivity {
      * Calculates and displays home team run on button click
      */
     public void runScoreHome(View view) {
-        homeTeam.runScore(view);
+        homeTeam.runScore();
+        displayScoreHome(homeTeam.getRuns());
     }
 
     /**
      * Calculates and displays visiting team run on button click
      */
     public void runScoreVisitor(View view) {
-        visitorTeam.runScore(view);
+        visitorTeam.runScore();
+        displayScoreVisitor(visitorTeam.getRuns());
     }
 
     /**
      * Calculates and displays home team grandslam on button click
      */
     public void grandSlamHome(View view) {
-        homeTeam.grandSlam(view);
+        homeTeam.grandSlam();
+        displayScoreHome(homeTeam.getRuns());
     }
 
     /**
      * Calculates and displays visiting team grandslam on button click
      */
     public void grandSlamVisitor(View view) {
-        visitorTeam.grandSlam(view);
+        visitorTeam.grandSlam();
+        displayScoreVisitor(visitorTeam.getRuns());
     }
 
     /**
      * Calculates and displays home team outs. Control and display inning
      */
     public void outsHome(View view) {
-        homeTeam.teamOut(view);
+        homeTeam.teamOut();
         inningsHelper();
     }
 
@@ -156,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
      * Calculates and displays visiting team outs. Control and display inning
      */
     public void outsVisitor(View view) {
-        visitorTeam.teamOut(view);
+        visitorTeam.teamOut();
         inningsHelper();
     }
 
@@ -177,8 +210,8 @@ public class MainActivity extends AppCompatActivity {
         } else if (inning >= REG_INNINGS && homeTeam.getRuns() < visitorTeam.getRuns() && homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS) {
             Toast.makeText(this, this.getString(R.string.toastvisitor), Toast.LENGTH_SHORT).show();
         }
-        homeTeam.displayOuts(homeTeam.getOuts());
-        visitorTeam.displayOuts(visitorTeam.getOuts());
+        displayOutsHome(homeTeam.getOuts());
+        displayOutsVisitor(visitorTeam.getOuts());
         displayInning(inning);
     }
 }
