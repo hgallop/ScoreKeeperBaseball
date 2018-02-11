@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         homeTeam.setOuts(RESTART);
         visitorTeam.setOuts(RESTART);
         homeTeam.setRuns(RESTART);
-        visitorTeam.setOuts(RESTART);
+        visitorTeam.setRuns(RESTART);
         inning = 1;
         homeTeam.displayScore(homeTeam.getRuns());
         visitorTeam.displayScore(visitorTeam.getRuns());
@@ -149,34 +149,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void outsHome(View view) {
         homeTeam.teamOut(view);
-        if (homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS && inning < REG_INNINGS) {
-            homeTeam.setOuts(RESTART);
-            visitorTeam.setOuts(RESTART);
-            inning += 1;
-            homeTeam.displayOuts(homeTeam.getOuts());
-            visitorTeam.displayOuts(visitorTeam.getOuts());
-            displayInning(inning);
-        }
-        if (inning == REG_INNINGS && homeTeam.getRuns() == visitorTeam.getRuns()) {
-            homeTeam.setOuts(RESTART);
-            visitorTeam.setOuts(RESTART);
-            inning += 1;
-            if (inning >= 10) {
-                inning = 10;
-            }
-            homeTeam.displayOuts(homeTeam.getOuts());
-            visitorTeam.displayOuts(visitorTeam.getOuts());
-            displayInning(inning);
-        }
-        if (inning >= REG_INNINGS && homeTeam.getRuns() > visitorTeam.getRuns() && homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS) {
-            Toast.makeText(this, this.getString(R.string.toasthome), Toast.LENGTH_SHORT).show();
-        } else if (inning >= REG_INNINGS && homeTeam.getRuns() < visitorTeam.getRuns() && homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS) {
-            Toast.makeText(this, this.getString(R.string.toastvisitor), Toast.LENGTH_SHORT).show();
-        }
-        homeTeam.displayOuts(homeTeam.getOuts());
-        visitorTeam.displayOuts(visitorTeam.getOuts());
-        displayInning(inning);
-
+        inningsHelper();
     }
 
     /**
@@ -184,26 +157,22 @@ public class MainActivity extends AppCompatActivity {
      */
     public void outsVisitor(View view) {
         visitorTeam.teamOut(view);
+        inningsHelper();
+    }
+
+    private void inningsHelper(){
         if (homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS && inning < REG_INNINGS) {
             homeTeam.setOuts(RESTART);
             visitorTeam.setOuts(RESTART);
             inning += 1;
-            homeTeam.displayOuts(homeTeam.getOuts());
-            visitorTeam.displayOuts(visitorTeam.getOuts());
-            displayInning(inning);
-        }
-        if (inning == REG_INNINGS && homeTeam.getRuns() == visitorTeam.getRuns()) {
+        } else if (inning == REG_INNINGS && homeTeam.getRuns() == visitorTeam.getRuns()) {
             homeTeam.setOuts(RESTART);
             visitorTeam.setOuts(RESTART);
             inning += 1;
             if (inning >= 10) {
                 inning = 10;
             }
-            homeTeam.displayOuts(homeTeam.getOuts());
-            visitorTeam.displayOuts(visitorTeam.getOuts());
-            displayInning(inning);
-        }
-        if (inning >= REG_INNINGS && homeTeam.getRuns() > visitorTeam.getRuns() && homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS) {
+        }else if (inning >= REG_INNINGS && homeTeam.getRuns() > visitorTeam.getRuns() && homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS) {
             Toast.makeText(this, this.getString(R.string.toasthome), Toast.LENGTH_SHORT).show();
         } else if (inning >= REG_INNINGS && homeTeam.getRuns() < visitorTeam.getRuns() && homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS) {
             Toast.makeText(this, this.getString(R.string.toastvisitor), Toast.LENGTH_SHORT).show();
@@ -212,6 +181,4 @@ public class MainActivity extends AppCompatActivity {
         visitorTeam.displayOuts(visitorTeam.getOuts());
         displayInning(inning);
     }
-
-
 }
