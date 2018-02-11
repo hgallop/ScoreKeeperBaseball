@@ -24,7 +24,7 @@ public class Team {
         this.name = name;
     }
 
-    //mustator. allows name value to be set.
+    //mutator. allows name value to be set.
     public void setName(String name){
         this.name = name;
     }
