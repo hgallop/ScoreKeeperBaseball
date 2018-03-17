@@ -1,73 +1,73 @@
 package com.example.android.scorekeeperbaseball;
 
 /**
- * Created by doyou on 2/10/2018.
+ * Create Team class
  */
 
 public class Team {
 
     //creates variables for ways to score, and outs.
-    private final int MAX_OUTS = 3;
-    private final int RUN = 1;
-    private final int GRAND_SLAM = 4;
-    private final int OUT = 1;
+    private final static int MAX_OUTS = 3;
+    private final static int RUN = 1;
+    private final static int GRAND_SLAM = 4;
+    private final static int OUT = 1;
 
     //creates variables for object
-    private int runs;
-    private int outs;
-    private String name;
+    private int mRuns;
+    private int mOuts;
+    private String mName;
 
     //object constructor. Used in MainActivity.java to create Team objects
-    public Team(int runs, int outs, String name) {
-        this.runs = runs;
-        this.outs = outs;
-        this.name = name;
+    Team(int runs, int outs, String name) {
+        mRuns = runs;
+        mOuts = outs;
+        mName = name;
     }
 
     //mutator. allows name value to be set.
     public void setName(String name){
-        this.name = name;
+        mName = name;
     }
 
     //accessor. allows name value to be accessed.
     public String getName(){
-        return name;
+        return mName;
     }
 
-    //mutator allows runs value to be set.
-    public void setRuns(int runs){
-        this.runs = runs;
+    //mutator allows mRuns value to be set.
+    void setRuns(int runs){
+        mRuns = runs;
     }
 
-    //accessor. allows runs value to be accessed
-    public int getRuns(){
-        return runs;
+    //accessor. allows mRuns value to be accessed
+    int getRuns(){
+        return mRuns;
     }
 
     //mutator. allows outs value to be set.
-    public void setOuts(int outs){
-        this.outs = outs;
+    void setOuts(int outs){
+        mOuts = outs;
     }
 
     //accessor. allows outs value to be accessed.
-    public int getOuts(){
-        return outs;
+    int getOuts(){
+        return mOuts;
     }
 
     //method to score a run for Team
-    public void runScore() {
-        runs += RUN;
+    void runScore() {
+        mRuns += RUN;
     }
 
     //method to score a grandslam for Team
-    public void grandSlam(){
-        runs += GRAND_SLAM;
+    void grandSlam(){
+        mRuns += GRAND_SLAM;
     }
 
     //method to add an out for Team
-    public void teamOut() {
-        if (outs < MAX_OUTS) {
-            outs += OUT;
+    void teamOut() {
+        if (mOuts < MAX_OUTS) {
+            mOuts += OUT;
         }
     }
 }
