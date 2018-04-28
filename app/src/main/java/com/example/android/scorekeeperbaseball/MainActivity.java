@@ -158,53 +158,68 @@ public class MainActivity extends AppCompatActivity {
      * Calculates and displays home team run on button click
      */
     public void runScoreHome(View view) {
-        homeTeam.runScore();
-        displayScoreHome(homeTeam.getRuns());
+        if(visitorTeam.getOuts() == MAX_OUTS){
+            homeTeam.runScore();
+            displayScoreHome(homeTeam.getRuns());
+        }
     }
 
     /**
      * Calculates and displays visiting team run on button click
      */
     public void runScoreVisitor(View view) {
-        visitorTeam.runScore();
-        displayScoreVisitor(visitorTeam.getRuns());
+        if(homeTeam.getOuts() == RESTART && visitorTeam.getOuts() != MAX_OUTS) {
+            visitorTeam.runScore();
+            displayScoreVisitor(visitorTeam.getRuns());
+        }
     }
 
     /**
      * Calculates and displays home team grandslam on button click
      */
     public void grandSlamHome(View view) {
-        homeTeam.grandSlam();
-        displayScoreHome(homeTeam.getRuns());
+        if(visitorTeam.getOuts() == MAX_OUTS) {
+            homeTeam.grandSlam();
+            displayScoreHome(homeTeam.getRuns());
+        }
     }
 
     /**
      * Calculates and displays visiting team grandslam on button click
      */
     public void grandSlamVisitor(View view) {
-        visitorTeam.grandSlam();
-        displayScoreVisitor(visitorTeam.getRuns());
+        if(homeTeam.getOuts() == RESTART && visitorTeam.getOuts() != MAX_OUTS) {
+            visitorTeam.grandSlam();
+            displayScoreVisitor(visitorTeam.getRuns());
+        }
     }
 
     /**
      * Calculates and displays home team outs.
      */
     public void outsHome(View view) {
-        homeTeam.teamOut();
-        inningsHelper();
+        if(visitorTeam.getOuts() == MAX_OUTS) {
+            homeTeam.teamOut();
+            inningsHelper();
+        }
     }
 
     /**
      * Calculates and displays visiting team outs.
      */
     public void outsVisitor(View view) {
-        visitorTeam.teamOut();
-        inningsHelper();
+        if(homeTeam.getOuts() == RESTART && visitorTeam.getOuts() != MAX_OUTS) {
+            visitorTeam.teamOut();
+            inningsHelper();
+        }
     }
 
 
     //handles logic for innings and win state.
     private void inningsHelper(){
+        //officials can declare 7 inning games
+        //extra inning if visitors score, home gets full inning
+        //if visitors didn't score and home scores, game is over
         if (homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS && currentInning < REG_INNINGS) {
             homeTeam.setOuts(RESTART);
             visitorTeam.setOuts(RESTART);
