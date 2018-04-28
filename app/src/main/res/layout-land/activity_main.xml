@@ -164,10 +164,15 @@
 
             <Button
                 android:id="@+id/reset"
-                style="@style/ButtonStyle"
+                style="@style/ButtonStyle.Margins"
                 android:layout_marginBottom="@dimen/tiny_margin"
                 android:onClick="resetAll"
                 android:text="@string/reset" />
+
+            <Button
+                style="@style/ButtonStyle.Margins"
+                android:onClick="sevenInnings"
+                android:text="@string/spec"/>
         </LinearLayout>
     </RelativeLayout>
 

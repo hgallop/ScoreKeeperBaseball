@@ -15,4 +15,5 @@
     <string name="reset">Reset</string>
     <string name="toasthome">Home Team Wins!</string>
     <string name="toastvisitor">Visiting Team Wins!</string>
+    <string name="spec">7 Inning Game</string>
 </resources>

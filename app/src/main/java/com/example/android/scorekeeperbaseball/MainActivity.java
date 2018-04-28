@@ -16,11 +16,16 @@ public class MainActivity extends AppCompatActivity {
     static final String INNING = "inning";
     static final String HOME_NAME = "homeName";
     static final String VISITOR_NAME = "visitorName";
+    static final String SEVEN_INNINGS = "sevenInnings";
 
     //creates variables for outs and innings comparisons.
     static final int MAX_OUTS = 3;
     static final int REG_INNINGS = 9;
+    static final int SPEC_INNINGS = 7;
     static final int RESTART = 0;
+
+    //variable true when officials declare a 7 inning game
+    boolean sevenInnings = false;
 
     //creates variables for inning, homeTeam name and visitorTeam name.
     int currentInning = 1;
@@ -85,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putString(HOME_NAME, homeTeam.getName());
         outState.putString(VISITOR_NAME, visitorTeam.getName());
         outState.putInt(INNING, currentInning);
+        outState.putBoolean(SEVEN_INNINGS, sevenInnings);
     }
 
     /**
@@ -100,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         homeTeam.setName(savedInstanceState.getString(HOME_NAME));
         visitorTeam.setName(savedInstanceState.getString(VISITOR_NAME));
         currentInning = savedInstanceState.getInt(INNING);
+        sevenInnings = savedInstanceState.getBoolean(SEVEN_INNINGS);
     }
 
     //method to display homeTeam score.
@@ -147,11 +154,17 @@ public class MainActivity extends AppCompatActivity {
         homeTeam.setRuns(RESTART);
         visitorTeam.setRuns(RESTART);
         currentInning = 1;
+        sevenInnings = false;
         displayScoreHome(homeTeam.getRuns());
         displayScoreVisitor(visitorTeam.getRuns());
         displayOutsHome(homeTeam.getOuts());
         displayOutsVisitor(visitorTeam.getOuts());
         displayInning(currentInning);
+    }
+
+    public void sevenInnings(View view){
+        sevenInnings = !sevenInnings;
+        Toast.makeText(this, this.getString(R.string.spec), Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -200,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
     public void outsHome(View view) {
         if(visitorTeam.getOuts() == MAX_OUTS) {
             homeTeam.teamOut();
-            inningsHelper();
+            inningsHelper(sevenInnings);
         }
     }
 
@@ -210,31 +223,44 @@ public class MainActivity extends AppCompatActivity {
     public void outsVisitor(View view) {
         if(homeTeam.getOuts() == RESTART && visitorTeam.getOuts() != MAX_OUTS) {
             visitorTeam.teamOut();
-            inningsHelper();
+            inningsHelper(sevenInnings);
         }
     }
 
 
     //handles logic for innings and win state.
-    private void inningsHelper(){
+    private void inningsHelper(boolean special){
         //officials can declare 7 inning games
         //extra inning if visitors score, home gets full inning
         //if visitors didn't score and home scores, game is over
-        if (homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS && currentInning < REG_INNINGS) {
-            homeTeam.setOuts(RESTART);
-            visitorTeam.setOuts(RESTART);
-            currentInning += 1;
-        } else if (currentInning == REG_INNINGS && homeTeam.getRuns() == visitorTeam.getRuns()) {
-            homeTeam.setOuts(RESTART);
-            visitorTeam.setOuts(RESTART);
-            currentInning += 1;
-            if (currentInning >= 10) {
-                currentInning = 10;
+        if(special){
+            if (homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS && currentInning < SPEC_INNINGS) {
+                homeTeam.setOuts(RESTART);
+                visitorTeam.setOuts(RESTART);
+                currentInning += 1;
+            } else if (currentInning == SPEC_INNINGS && homeTeam.getRuns() == visitorTeam.getRuns()) {
+                homeTeam.setOuts(RESTART);
+                visitorTeam.setOuts(RESTART);
+                currentInning += 1;
+            } else if (currentInning >= SPEC_INNINGS && homeTeam.getRuns() > visitorTeam.getRuns() && visitorTeam.getOuts() == MAX_OUTS) {
+                Toast.makeText(this, this.getString(R.string.toasthome), Toast.LENGTH_SHORT).show();
+            } else if (currentInning >= SPEC_INNINGS && homeTeam.getRuns() < visitorTeam.getRuns() && homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS) {
+                Toast.makeText(this, this.getString(R.string.toastvisitor), Toast.LENGTH_SHORT).show();
             }
-        }else if (currentInning >= REG_INNINGS && homeTeam.getRuns() > visitorTeam.getRuns() && homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS) {
-            Toast.makeText(this, this.getString(R.string.toasthome), Toast.LENGTH_SHORT).show();
-        } else if (currentInning >= REG_INNINGS && homeTeam.getRuns() < visitorTeam.getRuns() && homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS) {
-            Toast.makeText(this, this.getString(R.string.toastvisitor), Toast.LENGTH_SHORT).show();
+        } else {
+            if (homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS && currentInning < REG_INNINGS) {
+                homeTeam.setOuts(RESTART);
+                visitorTeam.setOuts(RESTART);
+                currentInning += 1;
+            } else if (currentInning == REG_INNINGS && homeTeam.getRuns() == visitorTeam.getRuns()) {
+                homeTeam.setOuts(RESTART);
+                visitorTeam.setOuts(RESTART);
+                currentInning += 1;
+            } else if (currentInning >= REG_INNINGS && homeTeam.getRuns() > visitorTeam.getRuns() && visitorTeam.getOuts() == MAX_OUTS) {
+                Toast.makeText(this, this.getString(R.string.toasthome), Toast.LENGTH_SHORT).show();
+            } else if (currentInning >= REG_INNINGS && homeTeam.getRuns() < visitorTeam.getRuns() && homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS) {
+                Toast.makeText(this, this.getString(R.string.toastvisitor), Toast.LENGTH_SHORT).show();
+            }
         }
         displayOutsHome(homeTeam.getOuts());
         displayOutsVisitor(visitorTeam.getOuts());
