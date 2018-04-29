@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="tiny_margin">4dp</dimen>
-    <dimen name="margin">16dp</dimen>
+    <dimen name="margin">12dp</dimen>
     <dimen name="button_sides">24dp</dimen>
     <dimen name="margin2">16dp</dimen>
+    <dimen name="margin_bottom">8dp</dimen>
     <dimen name="none">0dp</dimen>
     <dimen name="bar">1dp</dimen>
     <dimen name="team">32sp</dimen>

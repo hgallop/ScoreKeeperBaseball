@@ -58,20 +58,20 @@
                     android:textSize="@dimen/nums2" />
 
                 <Button
-                    style="@style/ButtonStyle.Margins"
+                    style="@style/ButtonStyle"
                     android:layout_gravity="center"
                     android:onClick="runScoreHome"
                     android:text="@string/run" />
 
                 <Button
-                    style="@style/ButtonStyle.Margins"
+                    style="@style/ButtonStyle"
                     android:layout_gravity="center"
                     android:onClick="outsHome"
                     android:shadowColor="@color/team"
                     android:text="@string/out" />
 
                 <Button
-                    style="@style/ButtonStyle.Margins"
+                    style="@style/ButtonStyle"
                     android:layout_gravity="center"
                     android:onClick="grandSlamHome"
                     android:text="@string/slam" />
@@ -121,19 +121,19 @@
                     android:textSize="@dimen/nums2" />
 
                 <Button
-                    style="@style/ButtonStyle.Margins"
+                    style="@style/ButtonStyle"
                     android:layout_gravity="center"
                     android:onClick="runScoreVisitor"
                     android:text="@string/run" />
 
                 <Button
-                    style="@style/ButtonStyle.Margins"
+                    style="@style/ButtonStyle"
                     android:layout_gravity="center"
                     android:onClick="outsVisitor"
                     android:text="@string/out" />
 
                 <Button
-                    style="@style/ButtonStyle.Margins"
+                    style="@style/ButtonStyle"
                     android:layout_gravity="center"
                     android:onClick="grandSlamVisitor"
                     android:text="@string/slam" />
@@ -164,13 +164,14 @@
 
             <Button
                 android:id="@+id/reset"
-                style="@style/ButtonStyle.Margins"
+                style="@style/ButtonStyle"
                 android:layout_marginBottom="@dimen/tiny_margin"
                 android:onClick="resetAll"
                 android:text="@string/reset" />
 
             <Button
-                style="@style/ButtonStyle.Margins"
+                style="@style/ButtonStyle"
+                android:layout_marginBottom="@dimen/margin_bottom"
                 android:onClick="sevenInnings"
                 android:text="@string/spec"/>
         </LinearLayout>

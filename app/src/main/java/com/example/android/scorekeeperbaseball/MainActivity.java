@@ -175,6 +175,9 @@ public class MainActivity extends AppCompatActivity {
             homeTeam.runScore();
             displayScoreHome(homeTeam.getRuns());
         }
+        if((currentInning > REG_INNINGS && !sevenInnings) || (currentInning > SPEC_INNINGS && sevenInnings)){
+            inningsHelper(sevenInnings);
+        }
     }
 
     /**
@@ -184,6 +187,9 @@ public class MainActivity extends AppCompatActivity {
         if(homeTeam.getOuts() == RESTART && visitorTeam.getOuts() != MAX_OUTS) {
             visitorTeam.runScore();
             displayScoreVisitor(visitorTeam.getRuns());
+        }
+        if((currentInning > REG_INNINGS && !sevenInnings) || (currentInning > SPEC_INNINGS && sevenInnings)){
+            inningsHelper(sevenInnings);
         }
     }
 
@@ -195,6 +201,9 @@ public class MainActivity extends AppCompatActivity {
             homeTeam.grandSlam();
             displayScoreHome(homeTeam.getRuns());
         }
+        if((currentInning > REG_INNINGS && !sevenInnings) || (currentInning > SPEC_INNINGS && sevenInnings)){
+            inningsHelper(sevenInnings);
+        }
     }
 
     /**
@@ -204,6 +213,9 @@ public class MainActivity extends AppCompatActivity {
         if(homeTeam.getOuts() == RESTART && visitorTeam.getOuts() != MAX_OUTS) {
             visitorTeam.grandSlam();
             displayScoreVisitor(visitorTeam.getRuns());
+        }
+        if((currentInning > REG_INNINGS && !sevenInnings) || (currentInning > SPEC_INNINGS && sevenInnings)){
+            inningsHelper(sevenInnings);
         }
     }
 
@@ -230,15 +242,12 @@ public class MainActivity extends AppCompatActivity {
 
     //handles logic for innings and win state.
     private void inningsHelper(boolean special){
-        //officials can declare 7 inning games
-        //extra inning if visitors score, home gets full inning
-        //if visitors didn't score and home scores, game is over
         if(special){
             if (homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS && currentInning < SPEC_INNINGS) {
                 homeTeam.setOuts(RESTART);
                 visitorTeam.setOuts(RESTART);
                 currentInning += 1;
-            } else if (currentInning == SPEC_INNINGS && homeTeam.getRuns() == visitorTeam.getRuns()) {
+            } else if (homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS && currentInning >= SPEC_INNINGS && homeTeam.getRuns() == visitorTeam.getRuns()) {
                 homeTeam.setOuts(RESTART);
                 visitorTeam.setOuts(RESTART);
                 currentInning += 1;
@@ -252,7 +261,7 @@ public class MainActivity extends AppCompatActivity {
                 homeTeam.setOuts(RESTART);
                 visitorTeam.setOuts(RESTART);
                 currentInning += 1;
-            } else if (currentInning == REG_INNINGS && homeTeam.getRuns() == visitorTeam.getRuns()) {
+            } else if (homeTeam.getOuts() == MAX_OUTS && visitorTeam.getOuts() == MAX_OUTS && currentInning >= REG_INNINGS && homeTeam.getRuns() == visitorTeam.getRuns()) {
                 homeTeam.setOuts(RESTART);
                 visitorTeam.setOuts(RESTART);
                 currentInning += 1;

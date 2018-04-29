@@ -14,7 +14,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/image"
-            android:fillViewport="true"
             android:scaleType="centerCrop"
             android:src="@drawable/baseball_4" />
 
@@ -64,17 +63,17 @@
                     android:textSize="@dimen/nums2" />
 
                 <Button
-                    style="@style/ButtonStyle.Margins"
+                    style="@style/ButtonStyle"
                     android:onClick="runScoreHome"
                     android:text="@string/run" />
 
                 <Button
-                    style="@style/ButtonStyle.Margins"
+                    style="@style/ButtonStyle"
                     android:onClick="outsHome"
                     android:text="@string/out" />
 
                 <Button
-                    style="@style/ButtonStyle.Margins"
+                    style="@style/ButtonStyle"
                     android:onClick="grandSlamHome"
                     android:text="@string/slam" />
 
@@ -122,17 +121,17 @@
                     android:textSize="@dimen/nums2" />
 
                 <Button
-                    style="@style/ButtonStyle.Margins"
+                    style="@style/ButtonStyle"
                     android:onClick="runScoreVisitor"
                     android:text="@string/run" />
 
                 <Button
-                    style="@style/ButtonStyle.Margins"
+                    style="@style/ButtonStyle"
                     android:onClick="outsVisitor"
                     android:text="@string/out" />
 
                 <Button
-                    style="@style/ButtonStyle.Margins"
+                    style="@style/ButtonStyle"
                     android:onClick="grandSlamVisitor"
                     android:text="@string/slam" />
 
@@ -162,12 +161,13 @@
 
             <Button
                 android:id="@+id/reset"
-                style="@style/ButtonStyle.Margins"
+                style="@style/ButtonStyle"
                 android:onClick="resetAll"
                 android:text="@string/reset" />
 
             <Button
-                style="@style/ButtonStyle.Margins"
+                style="@style/ButtonStyle"
+                android:layout_marginBottom="@dimen/margin_bottom"
                 android:onClick="sevenInnings"
                 android:text="@string/spec"/>
         </LinearLayout>
