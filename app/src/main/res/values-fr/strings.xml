@@ -14,4 +14,7 @@
     <string name="reset">Réinitialiser</string>
     <string name="toasthome">L\'équipe à Domicile Gagne!</string>
     <string name="toastvisitor">L\'équipe Visiteuse Gagne!</string>
+    <string name="top">Haut</string>
+    <string name="bottom">bas</string>
+    <string name="spec">" Jeu de 7 manches"</string>
 </resources>
