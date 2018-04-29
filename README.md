@@ -5,4 +5,5 @@
 * Project designed from a [Udacity](https://www.udacity.com/course/android-basics-user-input--ud836) course
 * Built with Android Studio.
 
-Cropped Photo: Courtesy - Wesley University / Creative Commons Attribution 2.0 Generic
+BACKGROUND IMAGE: Cropped Photo: Courtesy - Wesley University / Creative Commons Attribution 2.0 Generic
+MIPMAP IMAGE: Free clip-art from [clker.com](http://www.clker.com/clipart-baseball-8.html)
