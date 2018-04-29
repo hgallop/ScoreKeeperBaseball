@@ -14,7 +14,7 @@
     <string name="reset">Reiniciar</string>
     <string name="toasthome">¡El Equipo Local Gana!</string>
     <string name="toastvisitor">¡El Equipo Visitante Gana!</string>
-    <string name="top">" parte superior"</string>
-    <string name="bottom">" fondo"</string>
+    <string name="top">"parte superior"</string>
+    <string name="bottom">"fondo"</string>
     <string name="spec">"Juego de 7 entradas "</string>
 </resources>
