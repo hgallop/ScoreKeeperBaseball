@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="tiny_margin">4dp</dimen>
-    <dimen name="margin">12dp</dimen>
+    <dimen name="margin">10dp</dimen>
     <dimen name="button_sides">24dp</dimen>
     <dimen name="margin2">16dp</dimen>
     <dimen name="margin_bottom">8dp</dimen>
@@ -12,4 +12,5 @@
     <dimen name="nums">46sp</dimen>
     <dimen name="nums2">32sp</dimen>
     <dimen name="button_text">16sp</dimen>
+    <dimen name="half_text">12sp</dimen>
 </resources>

@@ -3,6 +3,8 @@
     <string name="app_name">Score Keeper Baseball</string>
     <string name="home">Home</string>
     <string name="visit">Visitor</string>
+    <string name="top">TOP</string>
+    <string name="bottom">BOTTOM</string>
     <string name="mRuns">Runs</string>
     <string name="run">Run</string>
     <string name="outs">Outs</string>

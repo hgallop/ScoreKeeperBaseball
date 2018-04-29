@@ -159,6 +159,13 @@
                 android:text="@string/initial_inning"
                 android:textSize="@dimen/nums2" />
 
+            <TextView
+                style="@style/TextStyle.ColorStyle_2"
+                android:id="@+id/halfText"
+                android:freezesText="true"
+                android:text="@string/top"
+                android:textSize="@dimen/half_text" />
+
             <Button
                 android:id="@+id/reset"
                 style="@style/ButtonStyle"
