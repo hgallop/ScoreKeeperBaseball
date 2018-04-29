@@ -9,4 +9,4 @@ BACKGROUND IMAGE: Cropped Photo: Courtesy - Wesley University / Creative Commons
 
 MIPMAP IMAGE: Free clip-art from [clker.com](http://www.clker.com/clipart-baseball-8.html)
 
-![Scorekeeper Baseball](https://gifs.com/gif/APglL1)
+![Scorekeeper Baseball](http://res.cloudinary.com/hgallopcloud/image/upload/v1525020118/scorekeeper_xcjhfd.gif)
